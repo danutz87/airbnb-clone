@@ -34,7 +34,7 @@ class App extends Component {
     });
   }
 
-  handlesearch = (event) => {
+  handleSearch = (event) => {
     this.setState({
       search: event.target.value,
       flats: this.state.allFlats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
@@ -52,8 +52,7 @@ class App extends Component {
       <div className='app'>
         <div className='main'>
           <div className='search'>
-            <input type="text" placeholder="Search..."
-              onChange={this.handleSearch} />
+            <input type="text" placeholder="Search..." onChange={this.handleSearch} />
           </div>
           <div className='flats'>
             {this.state.flats.map((flat) => {
