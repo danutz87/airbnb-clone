@@ -64,8 +64,8 @@ class App extends Component {
           <GoogleMapReact
             center={center}
             zoom={14}>
-            {this.state.flats.map((flat) => {
-              return <Marker {...flat} selected={flat === this.state.selectedFlat} />
+            {this.state.flats.map((flat, i) => {
+              return <Marker key={i} {...flat} selected={flat === this.state.selectedFlat} />
             })}
           </GoogleMapReact>
         </div>
